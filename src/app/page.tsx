@@ -1,113 +1,132 @@
 import Image from "next/image";
+import Banner from "@/components/Banner";
+import LiveAuction from "@/components/LiveAuction";
+import LiveAuction2 from "@/components/LiveAuction2";
+import hand from "@/assets/Hand.png";
+import pleat from "@/assets/Pleat.png";
+import LiveAuction3 from "@/components/LiveAuction3";
+
+const style = {
+	wrapper: `w-[100%] px-[1.2rem] py-[1.2rem] flex justify-between flex-wrap`,
+	logoContainer: `flex items-center cursor-pointer`,
+	logoText: ` ml-[0.8rem] text-white font-semibold text-2xl`,
+	searchBar: `flex flex-1 mx-[0.8rem] w-max-[520px] items-center bg-[#363840] rounded-[0.8rem] hover:bg-[#4c505c]`,
+	searchIcon: `text-[#8a939b] mx-3 font-bold text-lg`,
+	searchInput: `h-[2.6rem] w-full border-0 bg-transparent outline-0 ring-0 px-2 pl-0 text-[#e6e8eb] placeholder:text-[#8a939b]`,
+	ctaItems: `flex items-center justify-end`,
+	ctaItem: `text-primary-light px-4 text-sm font-bold text-[#c8cacd] hover:text-white cursor-pointer`,
+	ctaIcon: `text-[#8a939b] text-3xl font-black px-4 hover:text-white cursor-pointer`,
+	ctaButtons: `flex items-center`,
+	ctaButton1: `mr-4 outline outline-2 outline-gray-500 outline-offset-0 rounded-lg text-sm ml-3 text-primary-light font-bold px-[1rem] py-[.5rem] hover:text-white hover:outline-white`,
+	ctaButton2: `bg-gradient-to-r from-[#4745D0] to-[#2A27C9] rounded-lg text-sm text-white font-bold px-[1rem] py-[.6rem]`,
+	ctaButton3: `mt-3 w-[100%] outline outline-2 outline-gray-500 outline-offset-0 rounded-lg text-sm text-primary-light font-bold px-[1rem] py-[.5rem] hover:text-white hover:outline-white`,
+	ctaButton4: `w-[100%]  bg-gradient-to-r from-[#4745D0] to-[#2A27C9] rounded-lg text-sm text-white font-bold px-[1rem] py-[.6rem]`,
+	logoWrapper: `flex align-center`,
+};
 
 export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+	return (
+		<main className="min-h-[100vh]">
+			<Banner />
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+			{/* Live Auction */}
+			<div className="py-8">
+				<h1 className="text-center font-bold mb-16 text-2xl">
+					Latest live auctions
+				</h1>
+				<LiveAuction />
+			</div>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+			{/* Call to action */}
+			<div className="w-[100%] p-8 md:p-16">
+				<div className="mx-[auto] max-w-screen-lg grid grid-cols-1 md:grid-cols-2">
+					<div>
+						<p className="tracking-wide text-xs text-primary-light mb-5">
+							OVERLINE
+						</p>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+						<h1 className="text-5xl mb-5">
+							Sapien ipsum scelerisque convallis fusce
+						</h1>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+						<p className="tracking-wide text-sm text-primary-light mb-10">
+							Ut amet vulputate faucibus vitae semper eget auctor. Diam tempor
+							pulvinar ultricies dolor feugiat aliquam commodo.
+						</p>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
+						<div className={style.ctaButtons}>
+							<button className={style.ctaButton2}>Get started</button>
+							<button className={style.ctaButton1}>Learn more</button>
+						</div>
+					</div>
+
+					<div className="bg-[url('../assets/Paint.png')] bg-center bg-contain bg-no-repeat min-h-[400px]" />
+				</div>
+			</div>
+
+			{/* Section 3 */}
+			<div className="w-[100%] p-8 md:p-16">
+				<div className="mx-[auto] max-w-screen-lg grid grid-cols-1 md:grid-cols-3 gap-x-5">
+					<div className="rounded-xl border border-gray-500 p-4 flex flex-col justify-between">
+						<p className="tracking-wide text-2xl font-semibold mb-4">
+							Check out the hottest Sale offers
+						</p>
+
+						<LiveAuction2 />
+
+						<button className={style.ctaButton3}>Show me more</button>
+					</div>
+
+					<div className="bg-gradient-to-b from-[#1C1D29] rounded-xl rounded-tl-none flex flex-col justify-between items-start p-4 relative">
+						<div className="flex relative -top-12 items-center justify-center">
+							<Image
+								alt="hand"
+								src={hand}
+								// height={300}
+								style={{
+									width: "100%",
+									height: "auto",
+									maxWidth: "unset",
+									zIndex: 1000,
+								}}
+							/>
+						</div>
+
+						<p className="tracking-wide text-lg font-semibold mb-4">
+							Get started creating & selling your NFTs
+						</p>
+
+						<p className="tracking-wide text-sm text-primary-light mb-10">
+							Nunc gravida faucibus netus feugiat tellus, viverra massa feugiat.
+							Mi est sit.
+						</p>
+
+						<button className={style.ctaButton4}>Get started</button>
+
+						<div className="flex absolute -top-[12px] left-0 items-center w-44">
+							<Image
+								alt="pleat"
+								src={pleat}
+								width={150}
+								/* style={{
+									width: "auto",
+									height: "auto",
+								}} */
+							/>
+						</div>
+					</div>
+
+					<div className="rounded-xl border border-gray-500 p-4">
+						<p className="tracking-wide text-2xl font-semibold mb-4">
+							Top NFT at a lower price
+						</p>
+
+						<LiveAuction3 />
+
+						<button className={style.ctaButton3}>Show me more</button>
+					</div>
+				</div>
+			</div>
+		</main>
+	);
 }
